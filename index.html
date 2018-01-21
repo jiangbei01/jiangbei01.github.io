@@ -42,7 +42,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="http://chuantu.biz/t6/211/1516520491x-1404793214.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">John Doe</a></h1>
@@ -100,7 +100,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="http://chuantu.biz/t6/211/1516520491x-1404793214.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">John Doe</h1>
@@ -150,6 +150,69 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/21/test/">test</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/21/test/" class="archive-article-date">
+  	<time datetime="2018-01-21T07:58:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="测试标题"><a href="#测试标题" class="headerlink" title="测试标题"></a>测试标题</h1><p>Java代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.itcast_01_mythread.thread.lock;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReentrantReadWriteLock;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用读写锁，可以实现读写分离锁定，读操作并发进行，写操作锁定单个线程</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 如果有一个线程已经占用了读锁，则此时其他线程如果要申请写锁，则申请写锁的线程会一直等待释放读锁。</span></span><br><span class="line"><span class="comment"> * 如果有一个线程已经占用了写锁，则此时其他线程如果申请写锁或者读锁，则申请的线程会一直等待释放写锁。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span></span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyReentrantReadWriteLock</span> </span>&#123;</span><br><span class="line">	 <span class="keyword">private</span> ReentrantReadWriteLock rwl = <span class="keyword">new</span> ReentrantReadWriteLock();</span><br><span class="line">     </span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span>&#123;</span><br><span class="line">	        <span class="keyword">final</span> MyReentrantReadWriteLock test = <span class="keyword">new</span> MyReentrantReadWriteLock();</span><br><span class="line">	         </span><br><span class="line">	        <span class="keyword">new</span> Thread()&#123;</span><br><span class="line">	            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	                test.get(Thread.currentThread());</span><br><span class="line">	                test.write(Thread.currentThread());</span><br><span class="line">	            &#125;;</span><br><span class="line">	        &#125;.start();</span><br><span class="line">	         </span><br><span class="line">	        <span class="keyword">new</span> Thread()&#123;</span><br><span class="line">	            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	                test.get(Thread.currentThread());</span><br><span class="line">	                test.write(Thread.currentThread());</span><br><span class="line">	            &#125;;</span><br><span class="line">	        &#125;.start();</span><br><span class="line">	         </span><br><span class="line">	    &#125;  </span><br><span class="line">	    </span><br><span class="line">	    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	     * 读操作,用读锁来锁定</span></span><br><span class="line"><span class="comment">	     * <span class="doctag">@param</span> thread</span></span><br><span class="line"><span class="comment">	     */</span></span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">get</span><span class="params">(Thread thread)</span> </span>&#123;</span><br><span class="line">	        rwl.readLock().lock();</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">	             </span><br><span class="line">	            <span class="keyword">while</span>(System.currentTimeMillis() - start &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">	                System.out.println(thread.getName()+<span class="string">"正在进行读操作"</span>);</span><br><span class="line">	            &#125;</span><br><span class="line">	            System.out.println(thread.getName()+<span class="string">"读操作完毕"</span>);</span><br><span class="line">	        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">	            rwl.readLock().unlock();</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">	    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	     * 写操作，用写锁来锁定</span></span><br><span class="line"><span class="comment">	     * <span class="doctag">@param</span> thread</span></span><br><span class="line"><span class="comment">	     */</span></span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(Thread thread)</span> </span>&#123;</span><br><span class="line">	        rwl.writeLock().lock();;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">	             </span><br><span class="line">	            <span class="keyword">while</span>(System.currentTimeMillis() - start &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">	                System.out.println(thread.getName()+<span class="string">"正在进行写操作"</span>);</span><br><span class="line">	            &#125;</span><br><span class="line">	            System.out.println(thread.getName()+<span class="string">"写操作完毕"</span>);</span><br><span class="line">	        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">	            rwl.writeLock().unlock();</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/21/test/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
